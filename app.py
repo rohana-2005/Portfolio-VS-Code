@@ -73,9 +73,7 @@ try:
         raise ValueError("No GEMINI_API_KEY found in environment variables")
     print("Configuring Gemini...")
     genai.configure(api_key=api_key)
-    chat = genai.GenerativeModel('gemini-1.5-flash').start_chat(
-        history=[], system_instruction=system_prompt
-    )
+    model = genai.GenerativeModel('gemini-1.5-flash')
     print("Gemini configured successfully")
 except Exception as e:
     print(f"Error configuring Gemini: {str(e)}")
@@ -90,7 +88,11 @@ def handle_query():
             return jsonify({"error": "No valid input provided"}), 400
         user_input = data['text'].strip()
         print(f"Received query: {user_input}")
-        response = chat.send_message(user_input)
+        
+        # Combine system prompt with user input
+        full_prompt = f"{system_prompt}\n\nUser query: {user_input}"
+        response = model.generate_content(full_prompt)
+        
         print(f"Gemini response: {response.text}")
         return jsonify({"response": response.text})
     except Exception as e:
@@ -103,4 +105,4 @@ def health_check():
 
 if __name__ == '__main__':
     print("Starting Flask application...")
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=8001, debug=True)
