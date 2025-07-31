@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 // Use environment variable for API URL or fallback to localhost
-const API_URL = 'http://localhost:8001';
+const API_URL = 'https://rohanam.pythonanywhere.com';
 
 function Terminal() {
   const [input, setInput] = useState('');
