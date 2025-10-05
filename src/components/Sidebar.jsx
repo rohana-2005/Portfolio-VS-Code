@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Sidebar = ({ onFileClick, activeFile }) => {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const files = [
     { name: 'home.tsx', icon: '⚛️', color: '#61dafb' },
@@ -21,6 +22,23 @@ const Sidebar = ({ onFileClick, activeFile }) => {
     display: 'flex',
     flexDirection: 'column',
     height: '100%'
+  };
+
+  // Mobile / small-screen overlay style (applied when isMobile and expanded)
+  const mobileOverlayStyle = {
+    position: 'fixed',
+    top: '30px', // leave room for MenuBar
+    left: 0,
+    bottom: 0,
+    width: '70%',
+    maxWidth: '320px',
+    backgroundColor: '#252526',
+    borderRight: '1px solid #3c3c3c',
+    display: 'flex',
+    flexDirection: 'column',
+    height: 'calc(100% - 30px)',
+    zIndex: 1000,
+    boxShadow: '2px 0 12px rgba(0,0,0,0.5)'
   };
 
   const headerStyle = {
@@ -51,6 +69,23 @@ const Sidebar = ({ onFileClick, activeFile }) => {
     flex: 1
   };
 
+  const hamburgerButtonStyle = {
+    position: 'fixed',
+    top: '4px',
+    left: '8px',
+    zIndex: 1100,
+    width: '40px',
+    height: '26px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#252526',
+    color: '#cccccc',
+    border: '1px solid #3c3c3c',
+    borderRadius: '4px',
+    cursor: 'pointer'
+  };
+
   const fileItemStyle = (isActive) => ({
     padding: '4px 8px 4px 24px',
     fontSize: '13px',
@@ -67,10 +102,58 @@ const Sidebar = ({ onFileClick, activeFile }) => {
     fontSize: '14px'
   };
 
+  // Detect small screens and auto-toggle mobile mode
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 600;
+      setIsMobile(mobile);
+      // collapse sidebar by default on mobile, expand on desktop
+      if (mobile) {
+        setIsExpanded(false);
+      } else {
+        setIsExpanded(true);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div style={sidebarStyle}>
+    <>
+      {/* Hamburger toggle shown on small screens when sidebar is collapsed */}
+      {isMobile && !isExpanded && (
+        <button
+          aria-label="Open sidebar"
+          style={hamburgerButtonStyle}
+          onClick={() => setIsExpanded(true)}
+        >
+          ☰
+        </button>
+      )}
+
+      <div style={isMobile ? (isExpanded ? mobileOverlayStyle : { width: '0', display: 'none' }) : sidebarStyle}>
       <div style={headerStyle}>
-        Explorer
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span>Explorer</span>
+          {isMobile && (
+            <button
+              onClick={() => setIsExpanded(false)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#cccccc',
+                cursor: 'pointer',
+                fontSize: '18px',
+                lineHeight: '1'
+              }}
+              aria-label="Close sidebar"
+            >
+              ×
+            </button>
+          )}
+        </div>
       </div>
       <div style={folderHeaderStyle} onClick={() => setIsExpanded(!isExpanded)}>
         <span style={{ marginRight: '4px' }}>
@@ -95,6 +178,7 @@ const Sidebar = ({ onFileClick, activeFile }) => {
         </ul>
       )}
     </div>
+    </>
   );
 };
 
