@@ -13,7 +13,7 @@ import Terminal from './components/Terminal';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('home.tsx');
-  const [openTabs, setOpenTabs] = useState(['home.tsx']);
+  const [openTabs, setOpenTabs] = useState(['home.tsx', 'education.json', 'skills.html', 'projects.js', 'Experience.md', 'contact.css']);
   const [activeView, setActiveView] = useState('explorer');
   const [showTerminal, setShowTerminal] = useState(false);
 
