@@ -177,6 +177,7 @@ const Sidebar = ({ onFileClick, activeFile }) => {
           ))}
         </ul>
       )}
+      <br/><br/><br/>
     </div>
     </>
   );

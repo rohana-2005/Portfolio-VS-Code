@@ -91,7 +91,6 @@ const Home = () => {
               <p>Mumbai, Maharashtra, India</p>
             </div>
           </div>
-
           <div className="info-card focus">
             <div className="card-header">
               <span className="icon">💻</span>
@@ -299,13 +298,13 @@ const Home = () => {
         .info-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 1.5rem;
+          gap: 2rem;
           margin-bottom: 3rem;
         }
 
         .info-card {
           background: #252526;
-          padding: 1.2rem;
+          padding: 1.8rem;
           border-radius: 8px;
           border: 1px solid #3e3e42;
           transition: all 0.3s ease;
@@ -322,23 +321,24 @@ const Home = () => {
         .card-header {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          margin-bottom: 1rem;
+          gap: 0.8rem;
+          margin-bottom: 1.2rem;
         }
 
         .icon {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
         }
 
         .card-header h3 {
           color: #007acc;
           margin: 0;
-          font-size: 1rem;
+          font-size: 1.1rem;
         }
 
         .card-content p {
-          margin: 0.5rem 0;
+          margin: 0.7rem 0;
           color: #d4d4d4;
+          line-height: 1.6;
         }
 
         .duration {
@@ -522,7 +522,7 @@ const Home = () => {
             gap: 1rem;
           }
         }
-      `}</style>
+      `}</style><br/><br/><br/>
     </div>
   );
 };

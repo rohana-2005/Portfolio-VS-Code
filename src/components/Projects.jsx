@@ -427,7 +427,7 @@ const Projects = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div><br/><br/><br/>
     </div>
   );
 };

@@ -189,6 +189,7 @@ const About = () => {
           background: #4f4f4f;
         }
       `}</style>
+      <br/><br/><br/>
     </div>
   );
 };
