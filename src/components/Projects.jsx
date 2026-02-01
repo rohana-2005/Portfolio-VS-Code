@@ -317,22 +317,23 @@ const Projects = () => {
 
     /* Mobile Responsive Styles for Projects Section */
     @media only screen and (max-width: 768px) {
+      /* Reduce container padding on mobile */
+      #root > div {
+        padding: 20px 5px !important;
+      }
+      
       /* Force single column layout on mobile */
       div[style*="grid-template-columns"] {
         grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        padding: 0 10px !important;
-      }
-      
-      /* Adjust container padding on mobile */
-      body > div > div:first-child {
-        padding: 20px 10px !important;
+        gap: 15px !important;
+        padding: 0 5px !important;
       }
       
       /* Make project cards full width on mobile */
       div[style*="backgroundColor: rgb(37, 37, 38)"] {
         max-width: 100% !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        width: 100% !important;
       }
       
       /* Adjust image container height */
@@ -342,14 +343,15 @@ const Projects = () => {
       
       /* Adjust image sizes on mobile */
       img[style*="width: 380px"] {
-        width: 100% !important;
-        max-width: 340px !important;
+        width: calc(100% - 20px) !important;
+        max-width: 100% !important;
         height: 160px !important;
+        margin: 10px !important;
       }
       
       /* Adjust card content padding */
       div[style*="padding: 25px"] {
-        padding: 20px !important;
+        padding: 18px !important;
       }
       
       /* Smaller font sizes on mobile */
@@ -368,36 +370,60 @@ const Projects = () => {
         padding: 3px 6px !important;
       }
       
-      /* Adjust button sizes */
+      /* Fix button container */
+      div[style*="display: flex"][style*="gap: 12px"] {
+        display: flex !important;
+        gap: 10px !important;
+        width: 100% !important;
+      }
+      
+      /* Adjust button sizes to fit properly */
       a[style*="padding: 10px 16px"] {
-        padding: 8px 12px !important;
+        padding: 8px 14px !important;
         font-size: 11px !important;
+        flex: 1 !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
       }
     }
 
     @media only screen and (max-width: 480px) {
-      /* Extra small screens */
+      /* Extra small screens - even less padding */
+      #root > div {
+        padding: 15px 3px !important;
+      }
+      
+      div[style*="grid-template-columns"] {
+        padding: 0 3px !important;
+        gap: 12px !important;
+      }
+      
+      /* Extra small image adjustments */
       img[style*="width: 380px"],
-      img[style*="width: 100%"] {
-        max-width: 100% !important;
+      img[style*="width: calc"] {
         height: 140px !important;
+        margin: 8px !important;
       }
       
       div[style*="padding: 25px"],
-      div[style*="padding: 20px"] {
+      div[style*="padding: 18px"] {
         padding: 15px !important;
       }
       
-      /* Stack buttons vertically on very small screens */
-      div[style*="display: flex"][style*="gap: 12px"] {
+      /* Stack buttons vertically on very small screens for better fit */
+      div[style*="display: flex"][style*="gap: 12px"],
+      div[style*="display: flex"][style*="gap: 10px"] {
         flex-direction: column !important;
         gap: 8px !important;
       }
       
       a[style*="padding: 10px 16px"],
-      a[style*="padding: 8px 12px"] {
+      a[style*="padding: 8px 14px"] {
         width: 100% !important;
-        justify-content: center !important;
+        flex: none !important;
+        padding: 10px 16px !important;
       }
     }
   `;
