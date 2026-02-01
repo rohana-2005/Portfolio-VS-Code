@@ -6,14 +6,13 @@ const Education = () => {
   const educationData = [
     {
       id: 'college',
-      degree: 'Bachelor of Technology in Information Technology',
-      honors: 'Honors in DevOps',
+      degree: 'B-Tech in Information Technology',
       institution: "SVKM's Dwarkadas J. Sanghvi College of Engineering",
       description: "Specialized in cutting-edge technologies with focus on AI and full-stack development",
       duration: "2023 - 2027",
       location: "Mumbai, Maharashtra, India",
-      grade: "SGPA: 9.81/10",
-      status: "Honors",
+      grade: "SGPA: 9.86/10",
+      status: "Honors: DevOps MLOps",
       subjects: [
         "Data Structures & Algorithms",
         "Machine Learning", 
@@ -24,14 +23,23 @@ const Education = () => {
         "Software Engineering"
       ],
       color: '#4fc3f7',
-      type: 'current'
+      type: 'Ongoing (3rd Year)'
     },
     {
       id: 'college2',
       degree: 'Intermediate College',
       institution: "Nagindas Khandwala College",
       duration: "Jun 2021 - Mar 2023",
+      location: "Mumbai, Maharashtra, India",
       grade: "82.83%",
+      subjects: [
+        "C++ Programming",
+        "Basics of IT", 
+        "Operating Systems",
+        "SDLC",
+        "web technologies",
+        "Cyber security"
+      ],
       color: '#4ec9b0',
       type: 'completed'
     },
@@ -40,7 +48,12 @@ const Education = () => {
       degree: 'High School',
       institution: "Gokuldham High School",
       duration: "Jun 2011 - Mar 2021",
+      location: "Mumbai, Maharashtra, India",
       grade: "92.50%",
+      subjects: [
+        "Java Programming", 
+        "Technical Drawing"
+      ],
       color: '#c586c0',
       type: 'completed'
     }

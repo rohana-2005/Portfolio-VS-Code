@@ -9,35 +9,49 @@ const About = () => {
       color: '#569cd6',
       bgColor: '#1e1e1e',
       borderColor: '#007acc',
-      skills: ['HTML', 'CSS', 'Javascript', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Three.js', 'Bootstrap']
+      skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Three.js', 'Bootstrap']
     },
     {
       name: 'Backend',
       color: '#4ec9b0',
       bgColor: '#1e1e1e',
       borderColor: '#4ec9b0',
-      skills: ['Node.js', 'Express', 'FastAPI', 'Python', 'Flask', 'MongoDB', 'PostgreSQL', 'SQL Database']
+      skills: ['Node.js', 'Express.js', 'FastAPI', 'Python', 'Flask', 'Spring Boot']
+    },
+    {
+      name: 'Databases',
+      color: '#ce9178',
+      bgColor: '#1e1e1e',
+      borderColor: '#ce9178',
+      skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'SQL']
     },
     {
       name: 'AI/ML',
       color: '#c586c0',
       bgColor: '#1e1e1e',
       borderColor: '#c586c0',
-      skills: ['TensorFlow', 'PyTorch', 'Hugging Face', 'BeautifulSoup', 'NLP', "GenAI", "LLMs"]
+      skills: ['TensorFlow', 'PyTorch', 'Hugging Face', 'BeautifulSoup', 'NLP', 'Generative AI', 'Large Language Models', 'Deep Learning', 'Scikit-learn', 'OpenCV', 'CNN']
     },
     {
       name: 'Tools & Cloud',
       color: '#dcdcaa',
       bgColor: '#1e1e1e',
       borderColor: '#dcdcaa',
-      skills: ['Git', 'Figma', 'Firebase', 'Vercel', 'GitHub']
+      skills: ['Git', 'Figma', 'Firebase', 'Vercel', 'GitHub', 'Docker', 'Apache Kafka']
     },
     {
       name: 'Programming Languages',
       color: '#9cdcfe',
       bgColor: '#1e1e1e',
       borderColor: '#9cdcfe',
-      skills: ['C/C++', 'Python', 'Java', 'JavaScript', 'HTML5', 'CSS3', 'SQL']
+      skills: ['C', 'C++', 'Python', 'Java', 'JavaScript', 'HTML5', 'CSS3', 'SQL']
+    },
+    {
+      name: 'Embedded Systems',
+      color: '#4fc1ff',
+      bgColor: '#1e1e1e',
+      borderColor: '#4fc1ff',
+      skills: ['STM32', 'Smartcard', 'IRDA Communication']
     },
     {
       name: 'Design',
