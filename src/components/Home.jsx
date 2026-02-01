@@ -53,7 +53,7 @@ const Home = () => {
             <div className="typewriter-container">
               <span className="typewriter-text">{typewriterText}</span>
               <span className="cursor">|</span>
-            </div>
+            </div><br/>
             <div className="social-links">
               <a href="https://github.com/rohana-2005" target="_blank" rel="noopener noreferrer" className="social-link github">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -99,8 +99,8 @@ const Home = () => {
             </div>
             <div className="card-content">
               <p>Full Stack Web Development</p>
-              <p>Machine Learning</p>
-              <p>NLP</p>
+              <p>Data Stuctures and Algorithm</p>
+              <p>Data Engineering</p>
             </div>
           </div>
 
@@ -110,9 +110,9 @@ const Home = () => {
               <h3>Interests</h3>
             </div>
             <div className="card-content">
-              <p>Modern Web Technologies</p>
+              <p>Competitive Programming</p>
               <p>Problem Solving & Algorithms</p>
-              <p>Open Source Contribution</p>
+              <p>AI and ML</p>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ const Home = () => {
             <div className="goal-icon">🎯</div>
             <div className="goal-content">
               <h3>My Goal</h3>
-              <p>Motivated and detail-oriented B.Tech IT student with a strong foundation in computer science and a keen interest in full-stack web development. Seeking opportunities to apply and enhance my skills in technologies like React, Flask, and Python, while also exploring innovative solutions through machine learning and natural language processing. Eager to contribute to dynamic teams and build impactful digital products.</p>
+              <p>I’m Rohana Mahimkar, a B.Tech Information Technology student at Dwarkadas J. Sanghvi College of Engineering (DJSCE, 2027), with a strong focus on Generative AI, Machine Learning, Data Science, system design, and Full-Stack Development. I leverage DSA daily to reason about performance, optimize solutions, and build efficient, scalable systems, while also working across backend engineering, data-driven systems, and cloud-based architectures.</p>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ const Home = () => {
             <div className="stat-number">∞</div>
             <div className="stat-label">Curiosity</div>
           </div>
-        </div>
+        </div><br/><br/>
       </div>
 
       <style jsx>{`
