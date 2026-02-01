@@ -323,7 +323,7 @@ const Github = () => {
                   alignItems: 'flex-end',
                   gap: '8px',
                 }}>
-                  <div style={{
+                  {/* <div style={{
                     background: exp.status === 'current' ? '#4ec9b020' : `${exp.color}20`,
                     color: exp.status === 'current' ? '#4ec9b0' : exp.color,
                     padding: '4px 8px',
@@ -335,9 +335,9 @@ const Github = () => {
                     letterSpacing: '0.5px',
                   }}>
                     {exp.status === 'current' ? '🔴 Live' : '✅ Done'}
-                  </div>
+                  </div> */}
                   
-                  <div style={{
+                  {/* <div style={{
                     background: `${exp.color}15`,
                     color: exp.color,
                     padding: '4px 8px',
@@ -347,7 +347,7 @@ const Github = () => {
                     border: `1px solid ${exp.color}30`,
                   }}>
                     {exp.type}
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
