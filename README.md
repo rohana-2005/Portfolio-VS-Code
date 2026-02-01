@@ -10,17 +10,9 @@ A modern, interactive portfolio website designed to look like Visual Studio Code
 
 Watch the portfolio in action:
 
-<div align="center">
-  <video src="https://github.com/rohana-2005/Portfolio-VS-Code/assets/your-asset-path/Portfolio%20video.mp4" controls>
-    Your browser does not support the video tag.
-  </video>
-</div>
+https://github.com/user-attachments/assets/Portfolio%20video.mp4
 
-Or view the video here:
-
-![Portfolio Demo](Portfolio%20video.mp4)
-
-> **Alternative**: You can also [view the video file directly](./Portfolio%20video.mp4) in the repository.
+<video src="./Portfolio%20video.mp4" controls></video>
 
 ## ✨ Features
 
