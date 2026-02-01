@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Code, Zap, Brain, Shield, BookOpen, Users } from 'lucide-react';
+import { ExternalLink, Github, Code, Zap, Brain, Shield, BookOpen, Users, TrendingUp, Settings } from 'lucide-react';
+import coinbase from '../assets/Coinbase.png'
+import automl from '../assets/cs11.png'
 import portfolio from '../assets/portfolio.png'
 import sans from '../assets/sans.png'
 import resume from '../assets/resume.png'
 import health from '../assets/health.png'
 import quiz from '../assets/quiz.png'
 import face from '../assets/face.png'
+import auto from '../assets/autoML.png'
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -13,6 +16,32 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      name: 'Coinbase Real-Time Market Data Analytics',
+      description: 'A real-time cryptocurrency analytics platform with microservices architecture, processing live Coinbase WebSocket data through Kafka, analyzing with Apache Flink, and visualizing in a React dashboard. Deployed using Kubernetes with CI/CD via GitHub Actions.',
+      technologies: ['Java', 'Spring Boot', 'Apache Kafka', 'Apache Flink', 'MongoDB', 'React', 'Kubernetes', 'Docker'],
+      github: 'https://github.com/rohana-2005/coinbase-realtime-market-data-analytics',
+      demo: '#',
+      status: 'Completed',
+      language: 'Java',
+      icon: <TrendingUp className="w-6 h-6" />,
+      color: '#00d4aa',
+      imageSpace: true
+    },
+    {
+      id: 2,
+      name: 'Automated Machine Learning Pipeline',
+      description: 'A web-based AutoML Pipeline built with Flask that allows users to upload CSV datasets, automatically preprocess them, train multiple ML models (classification or regression), compare performance, and download the best model through a simple web interface.',
+      technologies: ['Python', 'Flask', 'Scikit-learn', 'Pandas', 'HTML', 'Machine Learning', 'Data Science'],
+      github: 'https://github.com/rohana-2005/Automated-Machine-Learning-Pipeline',
+      demo: '#',
+      status: 'Completed',
+      language: 'Python',
+      icon: <Settings className="w-6 h-6" />,
+      color: '#9b59b6',
+      imageSpace: true
+    },
+    {
+      id: 3,
       name: 'AI-Powered Resume Matcher & Job Recommender.',
       description: 'An intelligent system that matches resumes with job descriptions using AI to provide personalized job recommendations.',
       technologies: ['Python', 'React JS', 'Machine Learning', 'Flask', 'LLM', "GenAI"],
@@ -25,7 +54,7 @@ const Projects = () => {
       imageSpace: true
     },
     {
-      id: 2,
+      id: 4,
       name: 'Health Risk Analyzer',
       description: 'A comprehensive health monitoring system that analyzes user data to predict and assess various health risks using predictive modeling.',
       technologies: ['Python', 'Data Science', 'Pandas', 'Scikit-learn', 'Matplotlib'],
@@ -38,7 +67,7 @@ const Projects = () => {
       imageSpace: true
     },
     {
-      id: 3,
+      id: 5,
       name: 'Sanskrit Learn System',
       description: 'An interactive educational platform designed to teach Sanskrit language with modern learning techniques and user-friendly interface.',
       technologies: ['JavaScript', 'React', 'Node.js', 'MongoDB', 'Express'],
@@ -51,7 +80,7 @@ const Projects = () => {
       imageSpace: true
     },
     {
-      id: 4,
+      id: 6,
       name: 'Face Mask Detection',
       description: 'Real-time face mask detection system using computer vision and deep learning to identify whether people are wearing masks.',
       technologies: ['Python', 'OpenCV', 'TensorFlow', 'Deep Learning', 'CNN'],
@@ -63,32 +92,32 @@ const Projects = () => {
       color: '#f7b731',
       imageSpace: true
     },
-    {
-      id: 5,
-      name: 'Quiz Website',
-      description: 'An interactive quiz platform with dynamic question generation, scoring system, and user progress tracking features.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Local Storage', 'Responsive Design'],
-      github: 'https://github.com/rohana-2005/quiz-website',
-      demo: '#',
-      status: 'Completed',
-      language: 'JavaScript',
-      icon: <Users className="w-6 h-6" />,
-      color: '#5f27cd',
-      imageSpace: true
-    },
-    {
-      id: 6,
-      name: 'Portfolio Website',
-      description: 'Personal portfolio website showcasing projects, skills, and professional experience with modern design and smooth animations.',
-      technologies: ['React', 'CSS3', 'JavaScript', 'Responsive Design', 'Animations'],
-      github: 'https://github.com/rohana-2005/portfolio-website',
-      demo: '#',
-      status: 'Completed',
-      language: 'JavaScript',
-      icon: <Code className="w-6 h-6" />,
-      color: '#00d2d3',
-      imageSpace: true
-    }
+    // {
+    //   id: 7,
+    //   name: 'Quiz Website',
+    //   description: 'An interactive quiz platform with dynamic question generation, scoring system, and user progress tracking features.',
+    //   technologies: ['HTML', 'CSS', 'JavaScript', 'Local Storage', 'Responsive Design'],
+    //   github: 'https://github.com/rohana-2005/quiz-website',
+    //   demo: '#',
+    //   status: 'Completed',
+    //   language: 'JavaScript',
+    //   icon: <Users className="w-6 h-6" />,
+    //   color: '#5f27cd',
+    //   imageSpace: true
+    // },
+    // {
+    //   id: 8,
+    //   name: 'Portfolio Website',
+    //   description: 'Personal portfolio website showcasing projects, skills, and professional experience with modern design and smooth animations.',
+    //   technologies: ['React', 'CSS3', 'JavaScript', 'Responsive Design', 'Animations'],
+    //   github: 'https://github.com/rohana-2005/portfolio-website',
+    //   demo: '#',
+    //   status: 'Completed',
+    //   language: 'JavaScript',
+    //   icon: <Code className="w-6 h-6" />,
+    //   color: '#00d2d3',
+    //   imageSpace: true
+    // }
   ];
 
   const containerStyle = {
@@ -119,7 +148,7 @@ const Projects = () => {
 
   const projectsGridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
     gap: '30px',
     maxWidth: '1400px',
     margin: '0 auto'
@@ -285,6 +314,92 @@ const Projects = () => {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-8px); }
     }
+
+    /* Mobile Responsive Styles for Projects Section */
+    @media only screen and (max-width: 768px) {
+      /* Force single column layout on mobile */
+      div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 10px !important;
+      }
+      
+      /* Adjust container padding on mobile */
+      body > div > div:first-child {
+        padding: 20px 10px !important;
+      }
+      
+      /* Make project cards full width on mobile */
+      div[style*="backgroundColor: rgb(37, 37, 38)"] {
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+      
+      /* Adjust image container height */
+      div[style*="height: 200px"] {
+        height: 180px !important;
+      }
+      
+      /* Adjust image sizes on mobile */
+      img[style*="width: 380px"] {
+        width: 100% !important;
+        max-width: 340px !important;
+        height: 160px !important;
+      }
+      
+      /* Adjust card content padding */
+      div[style*="padding: 25px"] {
+        padding: 20px !important;
+      }
+      
+      /* Smaller font sizes on mobile */
+      h3[style*="fontSize: 18px"] {
+        font-size: 16px !important;
+      }
+      
+      p[style*="fontSize: 13px"] {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+      }
+      
+      /* Smaller tech tags */
+      span[style*="fontSize: 11px"] {
+        font-size: 10px !important;
+        padding: 3px 6px !important;
+      }
+      
+      /* Adjust button sizes */
+      a[style*="padding: 10px 16px"] {
+        padding: 8px 12px !important;
+        font-size: 11px !important;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      /* Extra small screens */
+      img[style*="width: 380px"],
+      img[style*="width: 100%"] {
+        max-width: 100% !important;
+        height: 140px !important;
+      }
+      
+      div[style*="padding: 25px"],
+      div[style*="padding: 20px"] {
+        padding: 15px !important;
+      }
+      
+      /* Stack buttons vertically on very small screens */
+      div[style*="display: flex"][style*="gap: 12px"] {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      
+      a[style*="padding: 10px 16px"],
+      a[style*="padding: 8px 12px"] {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
   `;
   document.head.appendChild(styleSheet);
 
@@ -311,12 +426,12 @@ const Projects = () => {
               {project.imageSpace ? (
                 <img
                   src={
-                    project.id === 1 ? resume :
-                    project.id === 2 ? health :
-                    project.id === 3 ? sans :
-                    project.id === 4 ? face :
-                    project.id === 5 ? quiz :
-                    project.id === 6 ? portfolio :
+                    project.id === 1 ? coinbase :
+                    project.id === 2 ? auto :
+                    project.id === 3 ? resume :
+                    project.id === 4 ? health :
+                    project.id === 5 ? sans :
+                    project.id === 6 ? face :
                     ''
                   }
                   alt={project.name}
