@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import profileImage from '../assets/Rohana.jpg';
 
 const Home = () => {
   const [typewriterText, setTypewriterText] = useState('');
@@ -41,9 +42,7 @@ const Home = () => {
       <div className="about-content">
         <div className="header-section">
           <div className="profile-image">
-            <div className="avatar-placeholder">
-              <span>RM</span>
-            </div>
+            <img src={profileImage} alt="Rohana Mahimkar" className="avatar-image" />
             <div className="status-indicator"></div>
           </div>
           
@@ -216,6 +215,21 @@ const Home = () => {
         }
 
         .avatar-placeholder:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(0, 122, 204, 0.5);
+        }
+
+        .avatar-image {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid #007acc;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .avatar-image:hover {
           transform: scale(1.05);
           box-shadow: 0 0 20px rgba(0, 122, 204, 0.5);
         }
