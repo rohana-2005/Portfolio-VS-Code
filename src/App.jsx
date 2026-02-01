@@ -6,7 +6,6 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Github from './components/Github';
-import ActivityBar from './components/ActivityBar';
 import MenuBar from './components/MenuBar';
 import Education from './components/Education';
 import Terminal from './components/Terminal';
@@ -102,7 +101,6 @@ const App = () => {
     <div style={appStyle}>
       <MenuBar />
       <div style={bodyStyle}>
-        <ActivityBar activeView={activeView} setActiveView={setActiveView} onTerminalClick={() => setShowTerminal((prev) => !prev)} />
         <Sidebar onFileClick={openTab} activeFile={activeTab} />
         <div style={mainContentStyle}>
           <TabBar 
