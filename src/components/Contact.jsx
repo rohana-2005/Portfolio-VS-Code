@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, Mail, User, MessageSquare, Phone, MapPin, Github, Linkedin, Twitter, CheckCircle, AlertCircle, Code } from 'lucide-react';
 
 const Contact = () => {
@@ -12,6 +12,16 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [focusedField, setFocusedField] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -49,18 +59,18 @@ const Contact = () => {
   };
 
   const containerStyle = {
-    padding: '20px',
+    padding: isMobile ? '15px' : '20px',
     backgroundColor: '#1a1a1a',
     color: '#d4d4d4',
     minHeight: '100vh',
     fontFamily: 'Consolas, "Courier New", monospace',
-    fontSize: '14px'
+    fontSize: isMobile ? '13px' : '14px'
   };
 
   const headerStyle = {
-    fontSize: '32px',
+    fontSize: isMobile ? '24px' : '32px',
     color: '#4fc3f7',
-    marginBottom: '30px',
+    marginBottom: isMobile ? '20px' : '30px',
     fontWeight: 'normal',
     position: 'relative',
     paddingBottom: '10px',
@@ -69,8 +79,8 @@ const Contact = () => {
 
   const mainContentStyle = {
     display: 'grid',
-    gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : '350px 1fr',
-    gap: '30px',
+    gridTemplateColumns: isMobile ? '1fr' : '350px 1fr',
+    gap: isMobile ? '20px' : '30px',
     maxWidth: '1000px',
     margin: '0 auto'
   };
@@ -78,22 +88,22 @@ const Contact = () => {
   const sidebarStyle = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px'
+    gap: isMobile ? '15px' : '20px'
   };
 
   const contactCardStyle = {
     backgroundColor: '#252526',
     border: '1px solid #3c3c3c',
     borderRadius: '8px',
-    padding: '20px',
+    padding: isMobile ? '15px' : '20px',
     position: 'relative',
     overflow: 'hidden'
   };
 
   const cardTitleStyle = {
     color: '#4fc3f7',
-    fontSize: '16px',
-    marginBottom: '15px',
+    fontSize: isMobile ? '14px' : '16px',
+    marginBottom: isMobile ? '12px' : '15px',
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
@@ -106,7 +116,8 @@ const Contact = () => {
     gap: '10px',
     marginBottom: '12px',
     padding: '8px 0',
-    fontSize: '13px'
+    fontSize: isMobile ? '12px' : '13px',
+    wordBreak: 'break-word'
   };
 
   const contactIconStyle = {
@@ -137,20 +148,20 @@ const Contact = () => {
     backgroundColor: '#252526',
     border: '1px solid #3c3c3c',
     borderRadius: '8px',
-    padding: '25px',
+    padding: isMobile ? '15px' : '25px',
     position: 'relative'
   };
 
   const formStyle = {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px'
+    gap: isMobile ? '12px' : '15px'
   };
 
   const inputRowStyle = {
     display: 'grid',
-    gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : '1fr 1fr',
-    gap: '15px'
+    gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+    gap: isMobile ? '12px' : '15px'
   };
 
   const fieldContainerStyle = {
@@ -177,23 +188,25 @@ const Contact = () => {
     fontFamily: 'inherit',
     outline: 'none',
     transition: 'all 0.3s ease',
-    boxShadow: focusedField === fieldName ? '0 0 0 2px rgba(79, 195, 247, 0.1)' : 'none'
+    boxShadow: focusedField === fieldName ? '0 0 0 2px rgba(79, 195, 247, 0.1)' : 'none',
+    boxSizing: 'border-box'
   });
 
   const textareaStyle = (fieldName) => ({
     ...inputStyle(fieldName),
-    minHeight: '80px',
+    minHeight: isMobile ? '100px' : '80px',
     resize: 'vertical',
-    fontFamily: 'inherit'
+    fontFamily: 'inherit',
+    boxSizing: 'border-box'
   });
 
   const buttonStyle = {
-    padding: '12px 20px',
+    padding: isMobile ? '10px 16px' : '12px 20px',
     backgroundColor: isSubmitting ? '#555' : '#4fc3f7',
     color: isSubmitting ? '#999' : '#1a1a1a',
     border: 'none',
     borderRadius: '4px',
-    fontSize: '13px',
+    fontSize: isMobile ? '12px' : '13px',
     fontWeight: 'bold',
     cursor: isSubmitting ? 'not-allowed' : 'pointer',
     display: 'flex',
@@ -202,7 +215,8 @@ const Contact = () => {
     gap: '8px',
     transition: 'all 0.3s ease',
     fontFamily: 'inherit',
-    marginTop: '10px'
+    marginTop: '10px',
+    width: '100%'
   };
 
   const statusMessageStyle = (type) => ({

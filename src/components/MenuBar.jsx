@@ -58,7 +58,7 @@ const MenuBar = () => {
 
   return (
     <div style={menuBarStyle}>
-      {menuItems.map((item) => (
+      {/* {menuItems.map((item) => (
         <div
           key={item.id}
           style={menuItemStyle(activeMenu === item.id)}
@@ -67,10 +67,10 @@ const MenuBar = () => {
         >
           {item.label}
         </div>
-      ))}
+      ))} */}
       
       <div style={titleStyle}>
-        Rohana Mahimkar - Visual Studio Code
+        Rohana Mahimkar - Portfolio
       </div>
       
       
