@@ -2,6 +2,9 @@
 node_modules/
 .pnp
 .pnp.js
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Python
 __pycache__/
@@ -12,9 +15,7 @@ __pycache__/
 env/
 venv/
 ENV/
-build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -34,12 +35,15 @@ coverage/
 *.cover
 .hypothesis/
 .pytest_cache/
+.coverage
+.nyc_output
 
 # Build outputs
 dist/
 dist-ssr/
 build/
 out/
+*.tsbuildinfo
 
 # Logs
 logs/
@@ -56,7 +60,7 @@ lerna-debug.log*
 .env.development.local
 .env.test.local
 .env.production.local
-*.local
+.env*.local
 
 # Editor directories and files
 .vscode/*
@@ -73,16 +77,50 @@ lerna-debug.log*
 *.sw?
 *.swp
 *~
+.project
+.classpath
+.settings/
 
 # OS files
 Thumbs.db
+Thumbs.db:encryptable
 Desktop.ini
 .Spotlight-V100
 .Trashes
+ehthumbs.db
+ehthumbs_vista.db
 
 # Misc
 .cache/
+.parcel-cache/
 .temp/
 .tmp/
 *.bak
 *.orig
+.next/
+.nuxt/
+.vercel
+.turbo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Stores VSCode versions used for testing
+.vscode-test
+
+# Debug
+debug.log
+npm-debug.log*
+
+# Local development
+.local
+*.local
+
+# System files
+*.lock
