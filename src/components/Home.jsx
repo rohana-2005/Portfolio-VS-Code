@@ -7,10 +7,11 @@ const Home = () => {
   
   const phrases = [
     "Full Stack Developer",
+    "Data Engineer",
     "Machine Learning Engineer",
     "Problem Solver",
     "Tech Enthusiast",
-    "Code Craftsman"
+    "Researcher"
   ];
 
   useEffect(() => {
