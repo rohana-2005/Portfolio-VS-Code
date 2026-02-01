@@ -3,6 +3,7 @@ import React from 'react';
 const TabBar = ({ tabs, activeTab, onTabClick, onTabClose }) => {
   const tabBarStyle = {
     display: 'flex',
+    flexWrap: 'wrap',
     backgroundColor: '#2d2d30',
     borderBottom: '1px solid #3c3c3c',
     minHeight: '35px'
@@ -14,13 +15,15 @@ const TabBar = ({ tabs, activeTab, onTabClick, onTabClose }) => {
     color: isActive ? '#ffffff' : '#969696',
     border: 'none',
     borderRight: '1px solid #3c3c3c',
+    borderBottom: '1px solid #3c3c3c',
     cursor: 'pointer',
     fontSize: '13px',
     display: 'flex',
     alignItems: 'center',
     position: 'relative',
     minWidth: '80px',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    flex: window.innerWidth <= 768 ? '1 1 auto' : '0 0 auto'
   });
 
   const closeButtonStyle = {
